@@ -1,0 +1,36 @@
+﻿<Window x:Class="_004_SortGraph.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_004_SortGraph"
+        mc:Ignorable="d"
+        Title="정렬 알고리즘" Height="900" Width="1100">
+  <Grid  VerticalAlignment="Top">
+    <TextBlock x:Name="textBlock" HorizontalAlignment="Left" 
+               Margin="40,45,0,0" TextWrapping="Wrap" 
+               Text="데이터 갯수" VerticalAlignment="Top"/>
+    <TextBox x:Name="txtNo" 
+             Text="200" HorizontalAlignment="Left" Margin="132,43,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"
+             HorizontalContentAlignment="Center"/>
+    <Button x:Name="btnRandom" Content="랜덤 숫자 생성" HorizontalAlignment="Left" Margin="286,42,0,0" VerticalAlignment="Top" Width="98"
+            Click="btnRandom_Click"/>
+    <Button x:Name="btnTime" Content="시간 측정" HorizontalAlignment="Left" Margin="286,76,0,0" VerticalAlignment="Top" Width="98"/>
+    <TextBlock x:Name="txtBubble" HorizontalAlignment="Left" 
+               Margin="286,119,0,0" TextWrapping="Wrap" 
+               Text="버블 정렬 : " VerticalAlignment="Top"/>
+    <TextBlock x:Name="txtQuick" HorizontalAlignment="Left" 
+      Margin="286,140,0,0" TextWrapping="Wrap" 
+      Text="퀵 정렬 : " VerticalAlignment="Top"/>
+    <TextBlock x:Name="txtMerge" HorizontalAlignment="Left" 
+      Margin="286,161,0,0" TextWrapping="Wrap" 
+      Text="합병 정렬 : " VerticalAlignment="Top"/>
+    <Button x:Name="btnBubble" Content="버블 정렬" HorizontalAlignment="Left" Margin="286,196,0,0" VerticalAlignment="Top" Width="98" Height="23"/>
+    <Button x:Name="btnQuick" Content="퀵 정렬" HorizontalAlignment="Left" Margin="409,196,0,0" VerticalAlignment="Top" Width="98" Height="23"/>
+    <Button x:Name="btnMerge" Content="합병 정렬" HorizontalAlignment="Left" Margin="528,196,0,0" VerticalAlignment="Top" Width="98" Height="23"/>
+    <Canvas x:Name="can" Background="AliceBlue" 
+            Width="1000" Height="500"
+            Margin="48,256,52,-590" />
+
+  </Grid>
+</Window>

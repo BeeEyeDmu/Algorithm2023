@@ -1,0 +1,21 @@
+﻿<Window x:Class="_003_fibonacci.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_003_fibonacci"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="300">
+  <Grid>
+    <TextBlock x:Name="textBlock" HorizontalAlignment="Left" 
+               Margin="38,52,0,0" TextWrapping="Wrap" 
+               Text="피보나치 수열의 다음 항까지 계산" VerticalAlignment="Top"/>
+    <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="38,91,0,0" TextWrapping="Wrap" 
+             VerticalAlignment="Top" Width="120" Height="32"
+             HorizontalContentAlignment="Center"/>
+    <Button x:Name="button" Content="계산" HorizontalAlignment="Left" Margin="177,91,0,0" VerticalAlignment="Top" Height="32" Width="66"
+            Click="button_Click"/>
+    <ListBox x:Name="listBox" Margin="38,156,0,42" HorizontalAlignment="Left" Width="205" />
+
+  </Grid>
+</Window>
