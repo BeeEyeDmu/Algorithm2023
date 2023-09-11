@@ -25,9 +25,14 @@
     <TextBlock x:Name="txtMerge" HorizontalAlignment="Left" 
       Margin="286,161,0,0" TextWrapping="Wrap" 
       Text="합병 정렬 : " VerticalAlignment="Top"/>
-    <Button x:Name="btnBubble" Content="버블 정렬" HorizontalAlignment="Left" Margin="286,196,0,0" VerticalAlignment="Top" Width="98" Height="23"/>
-    <Button x:Name="btnQuick" Content="퀵 정렬" HorizontalAlignment="Left" Margin="409,196,0,0" VerticalAlignment="Top" Width="98" Height="23"/>
-    <Button x:Name="btnMerge" Content="합병 정렬" HorizontalAlignment="Left" Margin="528,196,0,0" VerticalAlignment="Top" Width="98" Height="23"/>
+    <Button x:Name="btnBubble" Content="버블 정렬" 
+            HorizontalAlignment="Left" Margin="286,196,0,0" VerticalAlignment="Top" Width="98" Height="23"
+            Click="btnBubble_Click"/>
+    <Button x:Name="btnQuick" Content="퀵 정렬" 
+            HorizontalAlignment="Left" Margin="409,196,0,0" VerticalAlignment="Top" Width="98" Height="23"
+            Click="btnQuick_Click"/>
+    <Button x:Name="btnMerge" Content="합병 정렬" HorizontalAlignment="Left" Margin="528,196,0,0" VerticalAlignment="Top" Width="98" Height="23"
+            Click="btnMerge_Click"/>
     <Canvas x:Name="can" Background="AliceBlue" 
             Width="1000" Height="500"
             Margin="48,256,52,-590" />
