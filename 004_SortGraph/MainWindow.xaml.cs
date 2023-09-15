@@ -124,6 +124,7 @@ namespace _004_SortGraph
     private void btnMerge_Click(object sender, RoutedEventArgs e)
     {
       MergeSort(a, 0, N-1);
+      Graph();
     }
 
     private void MergeSort(int[] a, int left, int right)
@@ -153,6 +154,41 @@ namespace _004_SortGraph
       // sorted[]을 a[]로 복사
       for (int l = left; l <= right; l++)
         a[l] = sorted[l];
+    }
+
+    private void btnTime_Click(object sender, RoutedEventArgs e)
+    {
+      var watch = System.Diagnostics.Stopwatch.StartNew();
+      BubbleSort();
+      watch.Stop();
+      long tickBubble = watch.ElapsedTicks;
+      long msBubble = watch.ElapsedMilliseconds;
+      txtBubble.Text = "Bubble Sort : " + tickBubble 
+        + " Ticks, " + msBubble + " ms";
+
+      N = int.Parse(txtNo.Text);
+
+      Random r = new Random();
+      for (int i = 0; i < N; i++)
+        a[i] = r.Next(N * 3);
+
+      watch = System.Diagnostics.Stopwatch.StartNew();
+      QuicKSort(a, 0, N - 1); 
+      watch.Stop();
+      long tickQuick = watch.ElapsedTicks;
+      long msQuick = watch.ElapsedMilliseconds;
+      txtQuick.Text = "Quick Sort : " + tickQuick
+        + " Ticks, " + msQuick + " ms";
+
+      watch = System.Diagnostics.Stopwatch.StartNew();
+      MergeSort(a, 0, N - 1);
+      watch.Stop();
+      long tickMerge = watch.ElapsedTicks;
+      long msMerge = watch.ElapsedMilliseconds;
+      txtMerge.Text = "Merge Sort : " + tickMerge
+        + " Ticks, " + msMerge + " ms";
+
+      Graph();
     }
   }
 }

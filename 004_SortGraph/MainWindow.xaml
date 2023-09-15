@@ -15,7 +15,8 @@
              HorizontalContentAlignment="Center"/>
     <Button x:Name="btnRandom" Content="랜덤 숫자 생성" HorizontalAlignment="Left" Margin="286,42,0,0" VerticalAlignment="Top" Width="98"
             Click="btnRandom_Click"/>
-    <Button x:Name="btnTime" Content="시간 측정" HorizontalAlignment="Left" Margin="286,76,0,0" VerticalAlignment="Top" Width="98"/>
+    <Button x:Name="btnTime" Content="시간 측정" HorizontalAlignment="Left" Margin="286,76,0,0" VerticalAlignment="Top" Width="98"
+            Click="btnTime_Click"/>
     <TextBlock x:Name="txtBubble" HorizontalAlignment="Left" 
                Margin="286,119,0,0" TextWrapping="Wrap" 
                Text="버블 정렬 : " VerticalAlignment="Top"/>
