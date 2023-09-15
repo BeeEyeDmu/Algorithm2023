@@ -1,0 +1,26 @@
+﻿<Window x:Class="_005_ClosestPair.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_005_ClosestPair"
+        mc:Ignorable="d"
+        Title="Closest Pair" Height="770" Width="1100">
+  <Grid>
+    <Canvas x:Name="can" Background="AliceBlue" Margin="10,10,10,59"
+            Width="1000" Height="600"/>
+    <Button x:Name="btnCreate" Content="생성" HorizontalAlignment="Left" Margin="477,677,0,0" VerticalAlignment="Top" Width="128" Height="28"
+            Click="btnCreate_Click"/>
+    <Button x:Name="btnBrute" Content="Brute Force" HorizontalAlignment="Left" Margin="665,677,0,0" VerticalAlignment="Top" Width="128" Height="28"
+            Click="btnBrute_Click"/>
+    <Button x:Name="btnDivde" Content="Divide and Conquer" HorizontalAlignment="Left" Margin="859,677,0,0" VerticalAlignment="Top" Width="130" Height="28"
+            Click="btnDivde_Click"/>
+    <TextBlock HorizontalAlignment="Left" 
+               Margin="75,683,0,0" 
+               TextWrapping="Wrap" 
+               Text="생성할 점의 갯수 : " VerticalAlignment="Top"/>
+    <TextBox x:Name="txtNo" HorizontalAlignment="Left" Margin="211,677,0,0" TextWrapping="Wrap" Text="200" VerticalAlignment="Top" Width="134"
+             HorizontalContentAlignment="Center" 
+             VerticalContentAlignment="Center" Height="28"/>
+  </Grid>
+</Window>

@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "003_fibonacci", "003_fibona
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "004_SortGraph", "004_SortGraph\004_SortGraph.csproj", "{D4A9EC4B-E149-4D6B-B8DF-D406D588EEA7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "005_ClosestPair", "005_ClosestPair\005_ClosestPair.csproj", "{33CB6A97-7AA1-4F76-BB4A-B52782FB6CBB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{D4A9EC4B-E149-4D6B-B8DF-D406D588EEA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4A9EC4B-E149-4D6B-B8DF-D406D588EEA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4A9EC4B-E149-4D6B-B8DF-D406D588EEA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33CB6A97-7AA1-4F76-BB4A-B52782FB6CBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33CB6A97-7AA1-4F76-BB4A-B52782FB6CBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33CB6A97-7AA1-4F76-BB4A-B52782FB6CBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33CB6A97-7AA1-4F76-BB4A-B52782FB6CBB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
