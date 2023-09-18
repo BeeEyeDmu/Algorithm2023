@@ -22,14 +22,17 @@ namespace _005_ClosestPair
   {
     public int Compare(object x, object y)
     {
-      return (int)(((Point)x).X - ((Point)y).X);
+      //return (int)(((Point)x).X - ((Point)y).X);
+      if (((Point)x).X - ((Point)y).X > 0)
+        return 1;
+      else
+        return -1;
     }
   }
   public partial class MainWindow : Window
-  {
-    const int P = 10000;
+  {    
     int noOfPoints;
-    Point[] points = new Point[P];
+    Point[] points;
 
     public MainWindow()
     {
@@ -39,6 +42,7 @@ namespace _005_ClosestPair
     private void btnCreate_Click(object sender, RoutedEventArgs e)
     {
       noOfPoints = int.Parse(txtNo.Text);
+      points = new Point[noOfPoints];
       MakePointArray();
       SortPointArray();
     }
@@ -93,14 +97,47 @@ namespace _005_ClosestPair
 
     private void HighLight(PointPair result)
     {
-      Line l = new Line();
-      l.X1 = result.P1.X-1;
-      l.Y1 = result.P1.Y;
-      l.X2 = result.P2.X+1;
-      l.Y2 = result.P2.Y;
-      l.Stroke = Brushes.Red;
-      l.StrokeThickness = 5;
-      can.Children.Add(l);
+      //Line l = new Line();
+      //l.X1 = result.P1.X-1;
+      //l.Y1 = result.P1.Y;
+      //l.X2 = result.P2.X+1;
+      //l.Y2 = result.P2.Y;
+      //l.Stroke = Brushes.Red;
+      //l.StrokeThickness = 5;
+      //can.Children.Add(l);
+
+      // 사각형으로 두 점을 둘러싸도록 그린다
+      int size = 12;
+      Rectangle r = new Rectangle();
+      double left = 0;
+      if (result.P1.X < result.P2.X)
+      {
+        r.Width = result.P2.X - result.P1.X + size;
+        left = result.P1.X - size / 2;
+      }
+      else
+      {
+        r.Width = result.P1.X - result.P2.X + size;
+        left = result.P2.X - size / 2;
+      }
+
+      double top = 0;
+      if(result.P1.Y < result.P2.Y)
+      {
+        r.Height = result.P2.Y - result.P1.Y + size;
+        top = result.P1.Y - size / 2;
+      }
+      else
+      {
+        r.Height = result.P1.Y - result.P2.Y + size;
+        top = result.P2.Y - size / 2;
+      }
+
+      r.Stroke = Brushes.Red;
+      r.StrokeThickness = 1;
+      Canvas.SetLeft(r, left);
+      Canvas.SetTop(r, top);
+      can.Children.Add(r);
     }
 
     private PointPair FindClosestPair(Point[] points, int start, int end)
