@@ -41,6 +41,7 @@ namespace _005_ClosestPair
 
     private void btnCreate_Click(object sender, RoutedEventArgs e)
     {
+      can.Children.Clear();
       noOfPoints = int.Parse(txtNo.Text);
       points = new Point[noOfPoints];
       MakePointArray();
@@ -168,7 +169,70 @@ namespace _005_ClosestPair
 
     private void btnDivde_Click(object sender, RoutedEventArgs e)
     {
+      PointPair result = FindClosestPairDC(points, 0, noOfPoints - 1);
+      HighLight(result);
+      MessageBox.Show(String.Format("({0},{1})-({2},{3}) = {4}",
+        result.P1.X, result.P1.Y, result.P2.X, result.P2.Y,
+        result.Dist));
+    }
 
+    private PointPair FindClosestPairDC(Point[] points, int left, int right)
+    {
+      Console.WriteLine("FCDC(" + left + ", " + right + ")");
+      if(right-left <= 10) 
+        return FindClosestPair(points, left, right);
+
+      int mid = (left + right)/2;
+      CenterLine(points[mid].X);
+
+      PointPair cPL = FindClosestPairDC(points, left, mid);
+      PointPair cPR = FindClosestPairDC(points, mid + 1, right);
+      double d = Math.Min(cPL.Dist, cPR.Dist);
+      PointPair cPC = FindMidRange(points, mid, d);
+
+      return MinPointPair(cPL, cPR, cPC);
+    }
+
+    private void CenterLine(double mid)
+    {
+      Line line = new Line();
+      line.X1 = line.X2 = mid;
+      line.Y1 = 0;
+      line.Y2 = can.Height;
+      line.Stroke = Brushes.Blue;
+      line.StrokeThickness = 1;
+      can.Children.Add(line);
+    }
+
+    private PointPair MinPointPair(PointPair cPL, PointPair cPR, PointPair cPC)
+    {
+      if (cPL.Dist <= cPR.Dist && cPL.Dist <= cPC.Dist)
+        return cPL;
+      else if (cPR.Dist <= cPL.Dist && cPR.Dist <= cPC.Dist)
+        return cPR;
+      else
+        return cPC;
+    }
+
+    private PointPair FindMidRange(Point[] points, int mid, double d)
+    {
+      int left = 0, right = 0;
+
+      for(int i=mid; i>=0; i--)
+        if (points[mid].X - points[i].X > d)
+        {
+          left = i;
+          break;
+        }
+
+      for(int i=mid; i<points.Length; i++)
+        if (points[i].X - points[mid].X > d) 
+        { 
+          right = i;
+          break;
+        }
+
+      return FindClosestPair(points, left, right);
     }
   }
 }
