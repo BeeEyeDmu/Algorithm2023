@@ -88,7 +88,12 @@ namespace _005_ClosestPair
     // Brute Force 방법
     private void btnBrute_Click(object sender, RoutedEventArgs e)
     {
+      var watch = System.Diagnostics.Stopwatch.StartNew();
       PointPair result = FindClosestPair(points, 0, noOfPoints - 1);
+      watch.Stop();
+      long tickBF = watch.ElapsedTicks;
+      long msBF = watch.ElapsedMilliseconds;
+      MessageBox.Show("BF: " + tickBF + " ticks, " +  msBF + "ms");
 
       HighLight(result);
       MessageBox.Show(String.Format("({0},{1})-({2},{3}) = {4}",
@@ -146,7 +151,7 @@ namespace _005_ClosestPair
       double min = double.MaxValue;
       int minI = 0, minJ = 0; // 최근점 점 두개의 points[] 인덱스
 
-      for (int i = 0; i < end - 1; i++)
+      for (int i = start; i < end - 1; i++)
         for (int j = i + 1; j < end; j++)
           if (Dist(i, j) < min)
           {
@@ -169,7 +174,13 @@ namespace _005_ClosestPair
 
     private void btnDivde_Click(object sender, RoutedEventArgs e)
     {
+      var watch = System.Diagnostics.Stopwatch.StartNew();
       PointPair result = FindClosestPairDC(points, 0, noOfPoints - 1);
+      watch.Stop();
+      long tickDC = watch.ElapsedTicks;
+      long msDC = watch.ElapsedMilliseconds;
+      MessageBox.Show("DC: " + tickDC + " ticks, " + msDC + "ms");
+      
       HighLight(result);
       MessageBox.Show(String.Format("({0},{1})-({2},{3}) = {4}",
         result.P1.X, result.P1.Y, result.P2.X, result.P2.Y,
