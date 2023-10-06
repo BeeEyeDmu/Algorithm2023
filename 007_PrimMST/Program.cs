@@ -12,6 +12,7 @@ namespace _007_PrimMST
     {
       Graph g = new Graph();
       g.ReadGraph("graph1.txt");
+      g.PrintGraph();
     }
   }
 }
